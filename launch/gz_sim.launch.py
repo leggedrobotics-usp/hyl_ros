@@ -12,17 +12,13 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
 
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    # !!! MAKE SURE YOU SET THE PACKAGE NAME CORRECTLY !!!
-
     package_name='hyl_description'
 
-    # Robot state publisher
+    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled.
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory(package_name),'launch','rsp.launch.py'
-                )]), launch_arguments={'use_sim_time': 'true'}.items()
-    )
+                )]), launch_arguments={'use_sim_time': 'true'}.items())
 
     # Set the GAZEBO_MODEL_PATH environment variable to include the models from our own package.
     pkg_install_path = os.path.join(get_package_prefix(package_name), "share")
@@ -32,18 +28,15 @@ def generate_launch_description():
     else:
         model_path = pkg_install_path
 
-    print(model_path)
-        
-    gazebo_params_file = os.path.join(get_package_share_directory(package_name), 'config', 'gazebo_params.yaml')
-
     # Include the Gazebo launch file, provided by the gazebo_ros package
+    # Verbosity level: 1 (errors only)
+    # Server only (headless) mode: "-s" argument
     gazebo = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
                     get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py')]),
-                    launch_arguments=[('gz_args', [' -r -v 3 empty.sdf'])]
-             )
+                    launch_arguments=[('gz_args', ['-r -v 1 empty.sdf -s'])])
 
-    # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
+    # Run the spawner node from the ros_gz_sim package.
     spawn_entity = Node(package='ros_gz_sim', executable='create',
                         arguments=['-topic', 'robot_description',
                                    '-name', 'hyl',
@@ -54,22 +47,23 @@ def generate_launch_description():
     pos_cont_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["position_controller"]
-    )
+        arguments=["position_controller"])
 
     # Joint broadcaster
     joint_broad_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_broadcaster"]
-    )
+        arguments=["joint_broadcaster"])
 
     # Reference signal generator
     ref_signal_generator = Node(
         package="reference_signal_generator",
         executable="reference_signal_generator",
-        ros_arguments=["-p", "topic_name:=/position_controller/commands"]
-    )
+        ros_arguments=["-p", "topic_name:=/position_controller/commands"])
+
+    # Gazebo Real Time Factor (RTF) publisher
+    rtf_publisher = Node(package="gz_rtf_publisher",
+                         executable="gz_rtf_publisher")
 
     # Launch them all!
     return LaunchDescription([
@@ -79,5 +73,6 @@ def generate_launch_description():
         spawn_entity,
         pos_cont_spawner,
         joint_broad_spawner,
-        ref_signal_generator
+        ref_signal_generator,
+        rtf_publisher
     ])
