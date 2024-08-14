@@ -7,11 +7,11 @@
 
 <div align="center">
 
-  [![GitHub issues](https://img.shields.io/github/issues/leggedrobotics-usp/hyl_description)](https://github.com/leggedrobotics-usp/hyl_description/issues)
-  ![GitHub pull requests](https://img.shields.io/github/issues-pr/leggedrobotics-usp/hyl_description)
-  [![GitHub forks](https://img.shields.io/github/forks/leggedrobotics-usp/hyl_description)](https://github.com/leggedrobotics-usp/hyl_description/network)
-  [![GitHub stars](https://img.shields.io/github/stars/leggedrobotics-usp/hyl_description)](https://github.com/leggedrobotics-usp/hyl_description/stargazers)
-  [![GitHub license](https://img.shields.io/github/license/leggedrobotics-usp/hyl_description)](https://github.com/leggedrobotics-usp/hyl_description/blob/main/LICENSE)
+  [![GitHub issues](https://img.shields.io/github/issues/leggedrobotics-usp/hyl)](https://github.com/leggedrobotics-usp/hyl/issues)
+  ![GitHub pull requests](https://img.shields.io/github/issues-pr/leggedrobotics-usp/hyl)
+  [![GitHub forks](https://img.shields.io/github/forks/leggedrobotics-usp/hyl)](https://github.com/leggedrobotics-usp/hyl/network)
+  [![GitHub stars](https://img.shields.io/github/stars/leggedrobotics-usp/hyl)](https://github.com/leggedrobotics-usp/hyl/stargazers)
+  [![GitHub license](https://img.shields.io/github/license/leggedrobotics-usp/hyl)](https://github.com/leggedrobotics-usp/hyl/blob/main/LICENSE)
 
 </div>
 
