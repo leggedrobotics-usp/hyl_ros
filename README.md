@@ -3,7 +3,7 @@
  <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
 </p> -->
 
-<h1 align="center">hyl_description</h1>
+<h1 align="center">hyl</h1>
 
 <div align="center">
 
@@ -17,9 +17,14 @@
 
 ---
 
-<p align="center"> A ROS2 description package for the HyL platform (Hydraulic Leg)
+<p align="center"> A collection of ROS2 packages for the HyL platform (Hydraulic Leg)
     <br>
 </p>
+
+ROS version | Branch
+-- | --
+ROS2 | [ros2](https://github.com/leggedrobotics-usp/hyl/tree/ros2)
+ROS1 | [ros1](https://github.com/leggedrobotics-usp/hyl/tree/ros1)
 
 ## 📝 Table of Contents
 - [About](#about)
@@ -32,16 +37,18 @@
 
 ## 🧐 About <a name = "about"></a>
 
-This package contains the ROS2 description (URDF/xacro files) of HyL (Hydraulic Leg). The original files came from [iit-DLSLab/hyl-description](https://github.com/iit-DLSLab/hyl-description) and received minor updates to be ROS2 compatible (including Ignition Gazebo and ros2_control).
+This repository contains ROS2 packages for HyL (Hydraulic Leg). The original files came from [iit-DLSLab/hyl-description](https://github.com/iit-DLSLab/hyl-description) and received minor updates to be ROS2 compatible (including Ignition Gazebo and ros2_control).
 
-The package also has 2 launch files:
+It is currently composed of the following packages:
 
-- **rsp.launch.py**: robot state publisher. Simply loads the URDF onto the ``/robot_description`` topic. Can be visualized in Rviz2 or Foxglove.
+- **hyl_control**: [ros2_control](https://control.ros.org/rolling/index.html) algorithms for HyL.
 
-- **gz_sim.launch.py**: launches the robot in a simulated environment (Ignition Gazebo). Currently loads a simple joint position controller (from [ros2_controllers](https://github.com/ros-controls/ros2_controllers)) for preliminary testing purposes.
+- **hyl_description**: XACRO/URDF, meshes and launch files for loading and debugging.
+
+- **hyl_gazebo**: integration with Gazebo (modern/Ignition).
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-This repo is a standard ROS2 package (ament_cmake).
+This repo is composed by a collection of ROS2 packages.
 
 ### 🛠 Prerequisites
 
@@ -50,11 +57,11 @@ This repo is a standard ROS2 package (ament_cmake).
 
 ### 💻 Installing
 
-As mentioned above, this repo is a standard ROS2 package. Thus, you simply have to clone it inside your workspace's **src** directory.
+As mentioned above, this repo contains multiple ROS2 packages. Thus, you simply have to clone it inside your workspace's **src** directory, making sure to use the **ros2** branch.
 
 ```bash
 cd <path_to_your_ros2_ws>/src
-git clone https://github.com/leggedrobotics-usp/hyl_description.git
+git clone -b ros2 https://github.com/leggedrobotics-usp/hyl.git
 ```
 
 Then, use **colcon** to build.
@@ -66,16 +73,16 @@ colcon build --symlink-install
 
 ## 🎈 Usage <a name="usage"></a>
 
-Use the provided launch files to test basic robot visualization and Gazebo simulation. Use the launch and URDF files layout as a starting point to load different controllers and use cases.
+Most packages have launch files encompassing most features. Check individual README files when available for more detailed information.
 
 ## 🔋 Feature requests <a name="feature_requests"></a>
 
-Want something more on the robot description? Open an *Enhancement* issue describing it.
+Want something more for HyL? Open an *Enhancement* issue describing it.
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 - Fork the repo
-  - <https://github.com/leggedrobotics-usp/hyl_description/fork>
+  - <https://github.com/leggedrobotics-usp/hyl/fork>
 - Check out a new branch based and name it to what you intend to do:
   - ````bash
     git checkout -b BRANCH_NAME
