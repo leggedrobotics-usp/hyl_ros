@@ -60,15 +60,15 @@ This repo is composed by a collection of ROS1 packages.
 As mentioned above, this repo contains multiple ROS1 packages. Thus, you simply have to clone it inside your workspace's **src** directory, making sure to use the **ros1** branch.
 
 ```bash
-cd <path_to_your_ros2_ws>/src
+cd <path_to_your_ros1_ws>/src
 git clone -b ros1 https://github.com/leggedrobotics-usp/hyl.git
 ```
 
 Then, use **catkin** to build (**catkin build** example shown, **catkin_make** also usable)
 
 ```bash
-cd <path_to_your_ros_ws>
-catkin build hyl_control hyl_description hyl_gazebo
+cd <path_to_your_ros1_ws>
+catkin build hyl*
 ```
 
 ## 🎈 Usage <a name="usage"></a>
