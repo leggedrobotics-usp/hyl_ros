@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+	<xacro:property name="PI" value="3.1415926535897931"/>
+
+	<!-- standard distances -->
+	<xacro:property name="d_lr" value="0.26"/>
+	<xacro:property name="d_p0p1" value="0.08"/>
+	<xacro:property name="d_p1p2" value="0.35"/>
+	<xacro:property name="d_p2p3" value="0.341"/>
+
+	<!-- Inertial values -->
+	<!-- Trunk -->
+	<xacro:property name="xcom_trunk" value="-0.08315"/>
+	<xacro:property name="ycom_trunk" value="0.06849"/>
+	<xacro:property name="zcom_trunk" value="-0.00654"/>
+	<xacro:property name="m_trunk" value="7.982"/>
+	<xacro:property name="ixx_trunk" value="0.037131"/>
+	<xacro:property name="iyy_trunk" value="0.087473"/>
+	<xacro:property name="izz_trunk" value="0.112496"/>
+	<xacro:property name="ixy_trunk" value="0.028543"/>
+	<xacro:property name="ixz_trunk" value="-0.00097"/>
+	<xacro:property name="iyz_trunk" value="0.003392"/>
+	<!-- Hip assembly leg -->
+	<xacro:property name="xcom_hipassembly" value="0.0"/>
+	<xacro:property name="ycom_hipassembly" value="0.0"/>
+	<xacro:property name="zcom_hipassembly" value="0.0"/>
+	<xacro:property name="m_hipassembly" value="0.001"/>
+	<xacro:property name="ixx_hipassembly" value="0.001"/>
+	<xacro:property name="iyy_hipassembly" value="0.001"/>
+	<xacro:property name="izz_hipassembly" value="0.001"/>
+	<xacro:property name="ixy_hipassembly" value="0.0"/>
+	<xacro:property name="ixz_hipassembly" value="0.0"/>
+	<xacro:property name="iyz_hipassembly" value="0.0"/>
+	<!-- Upper leg -->
+	<xacro:property name="xcom_upperleg" value="0.14925"/>
+	<xacro:property name="ycom_upperleg" value="-0.02996"/>
+	<xacro:property name="zcom_upperleg" value="-0.00005"/>
+	<xacro:property name="m_upperleg" value="2.06218"/>
+	<xacro:property name="ixx_upperleg" value="0.00464"/>
+	<xacro:property name="iyy_upperleg" value="0.07216"/>
+	<xacro:property name="izz_upperleg" value="0.07463"/>
+	<xacro:property name="ixy_upperleg" value="-0.00718"/>
+	<xacro:property name="ixz_upperleg" value="-0.00001"/>
+	<xacro:property name="iyz_upperleg" value="-0.00001"/>
+	<!-- Lower leg -->
+	<xacro:property name="xcom_lowerleg" value="0.12185"/>
+	<xacro:property name="ycom_lowerleg" value="0.00058"/>
+	<xacro:property name="zcom_lowerleg" value="-0.00012"/>
+	<xacro:property name="m_lowerleg" value="0.80669"/>
+	<xacro:property name="ixx_lowerleg" value="0.00042"/>
+	<xacro:property name="iyy_lowerleg" value="0.02202"/>
+	<xacro:property name="izz_lowerleg" value="0.02183"/>
+	<xacro:property name="ixy_lowerleg" value="0.0"/>
+	<xacro:property name="ixz_lowerleg" value="0.0"/>
+	<xacro:property name="iyz_lowerleg" value="0.0"/>
+
+</robot>

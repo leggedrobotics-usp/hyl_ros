@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <gazebo>
+        <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+            <robotParam>robot_description</robotParam>
+            <robotParamNode>robot_state_publisher</robotParamNode>
+            <legacyModeNS>true</legacyModeNS>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+            <parameters>$(find hyl_description)/config/controllers.yaml</parameters>
+        </plugin>
+    </gazebo>
+    
+    <ros_control>
+        <joint name="slider_joint">
+            <limit lower="-0.6" upper="0.5"/>
+        </joint>
+        <joint name="hfe_joint">
+            <limit lower="${-10*PI/36}" upper="${14*PI/36}"/>
+        </joint>
+        <joint name="kfe_joint">
+            <limit lower="${-14*PI/18}" upper="${-2*PI/18}"/>
+        </joint>
+    </ros_control>
+
+</robot>
