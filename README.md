@@ -110,7 +110,7 @@ Made with ❤️ by [@Vtn21](https://github.com/Vtn21)
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-<a href="hhttps://github.com/iit-DLSLab">
+<a href="https://github.com/iit-DLSLab">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/14836675?s=200&v=4" width="100px;" alt=""/>
  <br />
  <sub><b>DLS Lab at Istituto Italiano di Tecnologia, Italy</b></sub></a>
